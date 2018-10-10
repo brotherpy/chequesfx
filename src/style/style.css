@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04/09/2018, 08:14:49 AM
+    Author     : Brother
+*/
+
+.btn-login{
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-background-color: #5a5a5a;
+    -fx-font-weight:bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+   
+    -fx-pref-width: 100px;
+    -fx-pref-height: 35px;
+    
+}
+/*main class*/
+.toolbar{
+    -fx-background-color: #4e5a6e;
+    
+}
+.jfx-hamburger-icon{
+    -fx-spacing: 4px;
+}
+
+.jfx-hamburger StackPane{
+    -fx-background-color: #ffffff;
+    -fx-pref-width:30px;
+    -fx-background-radius: 5px;
+    
+}
+
+.side-menu{
+    -fx-background-color: #4e5a6e;
+}
+
+.side-menu-button{
+    -fx-background-color: #243a51;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-border-width: 0px;
+    -fx-border-style: none;
+    -fx-text-fill: white;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-cusor: hand;
+    -fx-alignment: CENTER_LEFT;
+    
+}
+.side-menu-button:hover{
+    -fx-background-color: #3CA609;
+}
+.side-menu-button:default{
+    -fx-background-color: #243a51;
+}
+.card{
+    -fx-background-color: white;
+    -fx-border-radius: 4.0px;
+    -fx-background-radius: 4.0px;
+    -fx-effect: dropshadow(gaussian,rgb(0.0,0.0,0.0,0.15),6.0,0.7,0.0,1.5);
+}
+.text{
+    -fx-font-family: "Roboto";
+}

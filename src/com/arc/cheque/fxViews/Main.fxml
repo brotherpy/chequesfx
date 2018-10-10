@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="mainStackPane" stylesheets="@../../../../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arc.cheque.fxController.MainController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1200.0">
+         <children>
+            <JFXToolbar fx:id="toolbar" layoutY="-1.0" prefHeight="93.0" prefWidth="1199.0" styleClass="toolbar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-1.0">
+               <left>
+                  <JFXHamburger fx:id="hamburger" prefHeight="60.0" prefWidth="66.0" styleClass="jfx-hamburger-icon" BorderPane.alignment="CENTER" />
+               </left>
+               <top>
+                  <MenuBar prefHeight="0.0" prefWidth="1199.0" BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Registros">
+                        <items>
+                          <MenuItem fx:id="menuRegistrar" mnemonicParsing="false" onAction="#registrarBanco" text="Registrar Banco" />
+                              <MenuItem mnemonicParsing="false" onAction="#registrarCuenta" text="Registrar Cuenta" />
+                              <MenuItem mnemonicParsing="false" onAction="#registrarChequera" text="Registrar Chequera" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </top>
+            </JFXToolbar>
+            <AnchorPane fx:id="contentPane" layoutX="4.0" layoutY="99.0" prefHeight="665.0" prefWidth="1192.0" />
+            <JFXDrawer fx:id="drawer" layoutY="91.0" prefHeight="680.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

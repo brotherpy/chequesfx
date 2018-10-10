@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.arc.cheque.fxModels.ChequesValueFactory?>-->
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="1192.0" stylesheets="@../../../../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arc.cheque.fxController.MovimientosViewController">
+   <children>
+      <AnchorPane prefHeight="665.0" prefWidth="1192.0">
+         <children>
+            <JFXTabPane fx:id="tabPaneMovimientos" layoutX="144.0" layoutY="1.0" prefHeight="676.0" prefWidth="853.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="1.0">
+               <tabs>
+                  <Tab fx:id="emitirCheque" text="Emitir Cheque">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <JFXComboBox fx:id="cbBanco" layoutX="124.0" layoutY="108.0" onAction="#cargarCuenta" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Banco" />
+                              <JFXComboBox fx:id="cbCuenta" layoutX="124.0" layoutY="159.0" onAction="#cargarChequera" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Cuenta" />
+                              <JFXComboBox fx:id="cbChequera" layoutX="124.0" layoutY="211.0" onAction="#cargarCheque" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Chequera" />
+                              <JFXComboBox fx:id="cbCheque" layoutX="124.0" layoutY="263.0" onAction="#mostrartextFields" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Cheque" />
+                              <Label fx:id="lblRotulo" layoutX="121.0" layoutY="42.0" text="Label" />
+                              <JFXTextField fx:id="txOrden" labelFloat="true" layoutX="124.0" layoutY="313.0" promptText="Orden" />
+                              <JFXTextField fx:id="txDias" labelFloat="true" layoutX="124.0" layoutY="370.0" onAction="#cargarTablaVencimientos" promptText="Plazo en Días" />
+                              <JFXTextField fx:id="txMonto" layoutX="124.0" layoutY="509.0" prefHeight="31.0" prefWidth="138.0" promptText="Monto" />
+                              <JFXDatePicker fx:id="dateCobro" layoutX="124.0" layoutY="448.0" overLay="true" prefHeight="31.0" prefWidth="166.0" promptText="Vencimiento" />
+                              <TableView fx:id="tablaVencimientos" layoutX="347.0" layoutY="63.0" prefHeight="426.0" prefWidth="479.0">
+                                <columns>
+                                  <TableColumn fx:id="colVencimiento" prefWidth="170.0" text="Fecha Vencimiento" />
+                                  <TableColumn fx:id="colMonto" prefWidth="159.0" text="Monto" />
+                                    <TableColumn fx:id="colDias" prefWidth="159.0" text="Días" />
+                                </columns>
+                              </TableView>
+                              <JFXButton fx:id="btnGuardar" layoutX="522.0" layoutY="525.0" onAction="#guardar" style="-fx-background-color: grey;" text="Guardar" />
+                              <Label fx:id="lblFecha" layoutX="124.0" layoutY="424.0" text="Fecha de Vencimiento:" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="pagarCheque" text="Pagar Cheque">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <JFXComboBox fx:id="cbBancopay" layoutX="124.0" layoutY="108.0" onAction="#cargarCuentapay" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Banco" />
+                              <JFXComboBox fx:id="cbCuentappay" layoutX="124.0" layoutY="190.0" onAction="#cargarChequerapay" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Cuenta" />
+                              <JFXComboBox fx:id="cbChequerapay" layoutX="124.0" layoutY="264.0" onAction="#cargarChequepay" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Chequera" />
+                              <Label fx:id="lblRotulopay" layoutX="121.0" layoutY="42.0" text="Label" />
+                              <TableView fx:id="tablaChequespay" layoutX="347.0" layoutY="63.0" prefHeight="426.0" prefWidth="479.0">
+                                <columns>
+                                  <TableColumn fx:id="colVencimientopay" prefWidth="170.0" text="Fecha Vencimiento" />
+                                  <TableColumn fx:id="colMontopay" prefWidth="159.0" text="Monto" />
+                                    <TableColumn fx:id="colPagar" prefWidth="159.0" text="Pagado">
+<!--                                        <cellValueFactory>
+                                            <ChequesValueFactory/>
+                                        </cellValueFactory>-->
+                                    </TableColumn>
+                                </columns>
+                              </TableView>
+                              <JFXButton fx:id="btnGuardarpay" layoutX="522.0" layoutY="525.0" onAction="#guardarPago" style="-fx-background-color: grey;" text="Guardar" />
+                           </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="anularCheque" text="Anular Cheque">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1209.0" styleClass="card">
+                             <JFXComboBox fx:id="cbBancoNull" layoutX="124.0" layoutY="108.0" onAction="#cargarCuentaNull" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Banco" />
+                              <JFXComboBox fx:id="cbCuentaNull" layoutX="124.0" layoutY="159.0" onAction="#cargarChequeraNull" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Cuenta" />
+                              <JFXComboBox fx:id="cbChequeraNull" layoutX="124.0" layoutY="211.0" onAction="#cargarChequeNull" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Chequera" />
+                              <JFXComboBox fx:id="cbChequeNull" layoutX="124.0" layoutY="263.0" onAction="#mostrarLabelsNull" prefHeight="31.0" prefWidth="183.0" promptText="Seleccionar Cheque" />
+                              <Label fx:id="lblRotuloNull" layoutX="121.0" layoutY="42.0" text="Label" />
+                           <AnchorPane fx:id="paneChequeAnularDetalle" layoutX="373.0" layoutY="78.0" prefHeight="228.0" prefWidth="363.0" styleClass="card">
+                              <children>
+                                 <AnchorPane layoutX="14.0" layoutY="-37.0" prefHeight="103.0" prefWidth="223.0" styleClass="card">
+                                    <children>
+                                       <Label layoutX="12.0" layoutY="74.0" style="-fx-font-size: 18;" text="Detalles:" textFill="#42b9d7" />
+                                       <MaterialDesignIconView fill="#00bcd4" glyphName="CALENDAR_REMOVE" layoutX="10.0" layoutY="46.0" size="40" />
+                                       <Label layoutX="98.0" layoutY="30.0" prefHeight="40.0" prefWidth="92.0" style="-fx-font-size: 22;" text="Cheque" textFill="#00bcd4">
+                                          <font>
+                                             <Font size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <Label layoutX="99.0" layoutY="7.0" prefHeight="40.0" prefWidth="73.0" style="-fx-font-size: 22;" text="Anular" textFill="#00bcd4">
+                                          <font>
+                                             <Font size="18.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <Label layoutX="64.0" layoutY="80.0" text="Emitido a:" />
+                                 <Label layoutX="64.0" layoutY="111.0" text="Emisión:" />
+                                 <Label layoutX="64.0" layoutY="179.0" text="Estado" />
+                                 <Label layoutX="66.0" layoutY="141.0" text="Pagado en:" />
+                                 <Label fx:id="lblOrden" layoutX="144.0" layoutY="80.0" text="OrdenLabel:" />
+                                 <Label fx:id="lblEmision" layoutX="144.0" layoutY="111.0" text="EmisionLabel" />
+                                 <Label fx:id="lblFechaVencimiento" layoutX="144.0" layoutY="140.0" text="PagadoLabel" />
+                                 <MaterialDesignIconView fill="#00bcd4" glyphName="ACCOUNT_CHECK" layoutX="25.0" layoutY="94.0" size="24" />
+                                 <MaterialDesignIconView fill="#00bcd4" glyphName="CALENDAR_CLOCK" layoutX="25.0" layoutY="123.0" size="24" />
+                                 <MaterialDesignIconView fill="#00bcd4" glyphName="COIN" layoutX="25.0" layoutY="157.0" size="24" />
+                                 <MaterialDesignIconView fill="#00bcd4" glyphName="CALENDAR_REMOVE" layoutX="25.0" layoutY="195.0" size="24" />
+                              </children>
+                           </AnchorPane>
+                           <JFXTextArea labelFloat="true" layoutX="124.0" layoutY="345.0" prefHeight="106.0" prefWidth="580.0" promptText="Observaciones:" />
+                           <JFXButton fx:id="btnAnular" layoutX="671.0" layoutY="500.0" onAction="#anularCheque" styleClass="btn-login" text="Anular" />
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

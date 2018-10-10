@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="980.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="150.0" styleClass="side-menu" stylesheets="@../../../../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arc.cheque.fxController.SideMenuController">
+   <children>
+      <Pane prefHeight="126.0" prefWidth="150.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Separator layoutX="10.0" layoutY="136.0" prefWidth="200.0" />
+      <Label alignment="CENTER" prefHeight="28.0" prefWidth="152.0" text="Registros" textAlignment="CENTER" textFill="#f2f0f0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Separator prefWidth="200.0" />
+      <JFXButton fx:id="btnInicio" onAction="#openHome" prefHeight="57.0" prefWidth="156.0" styleClass="side-menu-button" text="Inicio">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="18.0" wrappingWidth="30.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnMovimiento" layoutX="10.0" layoutY="139.0" onAction="#openMovimiento" prefHeight="50.0" prefWidth="156.0" styleClass="side-menu-button" text="Movimientos">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="UNIVERSITY" size="15.0" wrappingWidth="30.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnMoneda" layoutX="10.0" layoutY="189.0" onAction="#openRegistros" prefHeight="50.0" prefWidth="156.0" styleClass="side-menu-button" text="Registros">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="15.0" wrappingWidth="30.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="10.0" layoutY="239.0" prefHeight="50.0" prefWidth="156.0" styleClass="side-menu-button" text="Inicio">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" size="15.0" wrappingWidth="30.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="10.0" layoutY="289.0" prefHeight="50.0" prefWidth="156.0" styleClass="side-menu-button" text="Inicio">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" size="15.0" wrappingWidth="30.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="10.0" layoutY="339.0" prefHeight="50.0" prefWidth="156.0" styleClass="side-menu-button" text="Inicio">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" size="15.0" wrappingWidth="30.0" />
+         </graphic>
+      </JFXButton>
+   </children>
+   <padding>
+      <Insets bottom="1.0" />
+   </padding>
+</VBox>
